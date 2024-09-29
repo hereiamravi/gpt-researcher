@@ -30,6 +30,12 @@ json_repair
 json5
 loguru
 
+#gemini ported
+langchain-google-genai 
+langchain-google-vertexai 
+langchain-huggingface
+sentence-transformers
+
 # uncomment for testing
 # pytest
 # pytest-asyncio

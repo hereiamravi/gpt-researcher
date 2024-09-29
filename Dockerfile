@@ -26,7 +26,7 @@ RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
 COPY ./requirements.txt ./requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY ./multi_agents/requirements.txt ./multi_agents/requirements.txt
 RUN pip install -r multi_agents/requirements.txt
