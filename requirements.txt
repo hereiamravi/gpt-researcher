@@ -11,7 +11,10 @@ uvicorn
 pydantic
 fastapi
 python-multipart
-markdown
+# markdown
+
+git+https://github.com/Python-Markdown/markdown.git
+
 langchain>=0.2,<0.3
 langchain_community>=0.2,<0.3
 langchain-openai>=0.1,<0.2

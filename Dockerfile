@@ -7,6 +7,7 @@ RUN apt-get update \
 
 RUN apt-get update \
     && apt-get install -y --fix-missing firefox-esr wget \
+    && apt-get install -y git \
     && wget https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz \
     && tar -xvzf geckodriver* \
     && chmod +x geckodriver \
@@ -26,7 +27,8 @@ RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
 COPY ./requirements.txt ./requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip cache purge
+RUN pip install --no-cache-dir -r requirements.txt
 
 FROM gpt-researcher-install AS gpt-researcher
 
